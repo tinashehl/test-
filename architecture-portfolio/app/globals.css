@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-warm-white dark:bg-charcoal text-charcoal dark:text-warm-white;
+    cursor: none;
+  }
+
+  @media (max-width: 1024px) {
+    body {
+      cursor: auto;
+    }
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  ::selection {
+    @apply bg-charcoal text-warm-white dark:bg-warm-white dark:text-charcoal;
+  }
+
+  /* Remove default button cursor override */
+  a,
+  button,
+  [role='button'] {
+    cursor: none;
+  }
+
+  @media (max-width: 1024px) {
+    a,
+    button,
+    [role='button'] {
+      cursor: auto;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
